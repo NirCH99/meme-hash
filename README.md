@@ -7,15 +7,15 @@ The idea is to try this generator with a big group divided to pairs. every pair 
 
 **There are 3 parts to this generator:**
 
-# 1. Encryption keys 🔑
+### 1. Encryption keys 🔑
   In this part, each member of the pair will send its public key in the unsecure channel, so each one will be able to generate the "secret".
   Notice that each person's public key is already given, and not being calculated by them, just to make sure there will be no mistakes.
   
-# 2. Generate and encrypt meme 🔒
+### 2. Generate and encrypt meme 🔒
   Here you can make whatever meme you want using the "Dogo" template. after deciding on your hilarious text, you can encrypt your meme.
   The "secret" is required to cypher the meme, so just click the textbox (it will copy it to your clipboard). And now, just send it in the unsecured channel, nobody will be able to understand it!
   
-# 3. Decrypt Meme 🐕
+### 3. Decrypt Meme 🐕
   
  Now you can finally Decrypt the meme you got from your pair! Enter the cypher your pair send you, copy your "secret" and enter it, and.. WALLA! YOU GOT A MEME!
  
