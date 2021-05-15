@@ -1,5 +1,5 @@
 # MEME Encrypter
-## Educational meme hash generator for TechLift
+## Educational meme Encryption generator for TechLift
 
 This meme generator is designed to teach by hands-on executing symetric encryption using Diffie-Helman encryption.
 Currently it generates memes with the "Dogo" template, while allowing the user to change the top text and bottom text.
