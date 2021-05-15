@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Hash - Tech Lift</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap" rel="stylesheet">
+<style>
+    * {
+        font-family: 'Raleway', sans-serif !important;
+    }
+</style>
+</head>
+<body>
+    <!--  -->
+    <div class="grid grid-cols-1 gap-8 w-2/3 m-auto mt-12">
+        <section class="">
+        <div class = "flex flex-row items-center">
+            <img class="mx-auto w-36" src="TechLift_Logo.png" alt="TechLift Logo">
+        </div>
+            <span class="text-5xl">Meme Hash</span>
+                
+        </section>
+
+        <!-- Key generator -->
+        <section>
+            <span class="inline-block text-2xl pb-2">1. Encryption keys 🔑</span>
+            <div class="flex flex-row border-2 border-gray-300 px-4 py-4 rounded-lg">
+                <div class="block flex-1 flex items-start justify-start flex-col">
+                    <div class="flex flex-row items-end">
+                        <div class="flex flex-col">
+                            <label class="text-gray-700 mb-2" for="private-key">You private key</label>
+                            <input readonly placeholder="enter or generate key" class="px-1 border-gray-200 border-2 w-64 rounded-sm" type="text" name="private-key" id="private-key">
+                            <span class="text-gray-400 text-sm">Never share this key!</span>
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-row items-end mt-4">
+                        <div class="flex flex-col">
+                            <label class="text-gray-700 mb-2" for="public-key">Your public key</label>
+                            <input readonly placeholder="enter or generate key" class="px-1 border-gray-200 border-2 w-64 rounded-sm" type="text" name="public-key" id="public-key" onclick="copyToClipboard(this)">
+                            <span class="text-gray-400 text-sm">Share this key with your partner</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row items-end mt-4">
+                        <div class="flex flex-col">
+                            <label class="text-gray-700 mb-2" for="partner-public-key">Your partner's public key</label>
+                            <input placeholder="enter your partner's public key" class="px-1 border-gray-200 border-2 w-64 rounded-sm" type="text" name="partner-public-key" id="partner-public-key">
+                            <span class="text-gray-400 text-sm">Ask your partner to send you their public key</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row items-end my-4">
+                        <span class="text-gray-400 text-sm">Refresh the browser to get new keys</span>
+                    </div>
+
+                    <div class="flex flex-row align-start">
+                        <button id="encrypt-meme" onclick="computeSecret()" class="bg-yellow-200 px-4 py-2 mr-4 rounded-md border-yellow-300 border-2">Generate secret</button>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-row flex-1 items-start">
+                    <div class="flex flex-col">
+                        <label class="text-gray-700 mb-2" for="secret">Your secret (so don't share it!)</label>
+                        <textarea name="secret" id="secret" cols="30" rows="4" class="border-gray-200 border-2 rounded-sm" onclick="copyToClipboard(this)" readonly></textarea>
+                        <span class="text-gray-400 text-sm">Never Ever Ever</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- generate and encrypt meme -->
+        <section>
+            <span class="inline-block text-2xl pb-2">2. Generate and encrypt meme 🔒</span>
+            <div class="border-2 border-gray-300 px-4 py-4 rounded-lg">
+                <div class="flex flex-row">
+                    <div class="flex flex-1 flex-col">
+                        <span>meme preview:</span>
+                        <img src="http://apimeme.com/meme?meme=Doge-2&top=wow&bottom=much+encrypt" class="border-2 border-gray-200 block" alt="" id="meme-encrypt">
+                    </div>
+                    <div class="block flex-1 flex flex-col pl-2">
+                        <label class="text-gray-700" for="text-top">Top label</label>
+                        <input placeholder="wow" class="px-1 border-gray-200 border-2 w-52 rounded-sm mb-4" type="text" name="text-top" id="text-top">
+                        <label class="text-gray-700" for="text-bottom">Bottom label</label>
+                        <input placeholder="much encrypt" class="px-1 border-gray-200 border-2 w-52 rounded-sm mb-4" type="text" name="text-bottom" id="text-bottom">
+                        <div class="flex flex-row align-start">
+                            <button id="preview-meme" onclick="previewMeme()" class="bg-yellow-200 px-4 py-2 mr-4 rounded-md border-yellow-300 border-2">preview</button>
+                            <button id="encrypt-meme" onclick="encryptMeme()" class="bg-yellow-200 px-4 py-2 mr-4 rounded-md border-yellow-300 border-2">encrypt</button>
+                        </div>
+                        <span class="text-gray-400 text-sm pt-2">Copy your secret #1 for encryption</span>
+                        <textarea name="meme-encrypted" id="meme-encrypted" cols="30" rows="4" class="border-gray-200 border-2 mt-2 mb-4 rounded-sm" onclick="copyToClipboard(this)" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- decrypt meme -->
+        <section>
+            <span class="inline-block text-2xl pb-2">3. Decrypt Meme 🐕</span>
+            <div class="border-2 border-gray-300 px-4 py-4 rounded-lg mb-12">
+                <div class="flex flex-row">
+                    <div class="block flex-1 flex flex-col pl-2">
+                        <label class="text-gray-700" for="text-top">Enter cipher you got from partner</label>
+                        <span class="text-gray-400 text-sm pt-2">Copy your secret #1 for encryption</span>
+                        <textarea name="meme-cipher" id="meme-cipher" placeholder="Enter cipher here" cols="30" rows="4" class="border-gray-200 border-2 mt-2 rounded-sm mb-4" ></textarea>
+
+                        <div class="flex flex-row align-start">
+                            <button id="decrypt-meme" onclick="decryptMeme()" class="bg-yellow-200 px-4 py-2 mr-4 rounded-md border-yellow-300 border-2">decrypt</button>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col">
+                        <span>decrypted meme:</span>
+                        <img src="" class="border-2 border-gray-200 block" alt="" id="meme-decrypt">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <span class="inline-block text-lg pb-2">Built by Nir Chamo for LiftTech</span>
+            <br>
+            <br>
+            <br>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="/crypto.js"></script>
+    <script src="/index.js"></script>
+</body>
+</html>
