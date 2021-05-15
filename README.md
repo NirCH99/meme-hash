@@ -1,4 +1,4 @@
-# MEME Hash
+# MEME Encrypter
 ## Educational meme hash generator for TechLift
 
 This meme generator is designed to teach by hands-on executing symetric encryption using Diffie-Helman encryption.
