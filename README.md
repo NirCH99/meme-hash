@@ -5,7 +5,7 @@ This meme generator is designed to teach by hands-on executing symetric encrypti
 Currently it generates memes with the "Dogo" template, while allowing the user to change the top text and bottom text.
 The idea is to try this generator with a big group divided to pairs. every pair will share their public key in an unsecure channel, so other people can see it.
 
-**There are 3 parts to this generator:**
+## There are 3 parts to this generator:
 
 ### 1. Encryption keys 🔑
   In this part, each member of the pair will send its public key in the unsecure channel, so each one will be able to generate the "secret".
