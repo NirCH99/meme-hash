@@ -9,8 +9,8 @@ In this current version the public key is already calculated. it is possible to 
 ## There are 3 parts to this generator:
 
 ### 1. Encryption keys 🔑
-  In this part, each member of the pair will send its public key in the unsecure channel, so each one will be able to generate the "secret".
-  Notice that each person's public key is already given, and not being calculated by them, just to make sure there will be no mistakes.
+  In this part, each member of the pair will get the already given private key and public key, and will send its public key in the unsecure channel, so each one will be able to generate the "secret".
+  Notice that each person's public key and private key are already given, and not being calculated by them, just to make sure there will be no mistakes.
   
 ### 2. Generate and encrypt meme 🔒
   Here you can make whatever meme you want using the "Dogo" template. after deciding on your hilarious text, you can encrypt your meme.
