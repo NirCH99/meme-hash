@@ -25,9 +25,10 @@ In this current version the public key is already calculated. it is possible to 
  If you have any suggestion, requests or problems please let me know.
  
  Resources:
- "Doge" meme - http://apimeme.com/
- HTML & CSS - https://tailwindcss.com/
- Diffie-Helman - https://github.com/crypto-browserify/diffie-hellman
- Cyphering & Decyphering - https://github.com/brix/crypto-js
+ - "Doge" meme - http://apimeme.com/ 
+ - HTML & CSS - https://tailwindcss.com/
+ - Diffie-Helman - https://github.com/crypto-browserify/diffie-hellman
+ - Cyphering & Decyphering - https://github.com/brix/crypto-js
+ - Learn more about Diifie - Helman - https://www.youtube.com/watch?v=YEBfamv-_do
  
 
