@@ -24,7 +24,7 @@ In this current version the public key is already calculated. it is possible to 
  Hope it works well :)
  If you have any suggestion, requests or problems please let me know.
  
- Resources:
+ **Resources:**
  - "Doge" meme - http://apimeme.com/ 
  - HTML & CSS - https://tailwindcss.com/
  - Diffie-Helman - https://github.com/crypto-browserify/diffie-hellman
