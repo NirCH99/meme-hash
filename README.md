@@ -1,7 +1,7 @@
 # MEME Encrypter
 ## Educational meme Encryption generator for TechLift
 
-[This](nirch99.github.io/meme-hash) meme generator is designed to teach by hands-on executing symetric encryption using Diffie-Helman encryption.
+[This](https://nirch99.github.io/meme-hash/) meme generator is designed to teach by hands-on executing symetric encryption using Diffie-Helman encryption.
 Currently it generates memes with the "Dogo" template, while allowing the user to change the top text and bottom text.
 The idea is to try this generator with a big group divided to pairs. every pair will share their public key in an unsecure channel, so other people can see it.
 In this current version the public key is already calculated. it is possible to add the option for each side to calculate it by themselves.
